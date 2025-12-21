@@ -3,6 +3,6 @@
 
 #include "particule.h"
 
-double dynamique(Particule &p, double dt);
+double deplacement(std::vector<Particule> &liste, double dt);
 
 #endif
