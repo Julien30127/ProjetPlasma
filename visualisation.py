@@ -7,7 +7,7 @@ temps = data['temps']
 n = (data.shape[1] - 1) // 2
 
 fig, ax = plt.subplots()
-ax.set_xlim(-5, 10)
+ax.set_xlim(-10, 100)
 ax.set_ylim(0, data.filter(like='y').max().max() + 10)
 
 points = [ax.plot([], [], 'o')[0] for _ in range(n)]

@@ -4,12 +4,13 @@
 #include <iostream>
 #include <vector>
 
-struct Particule
-{
-    double position_x;
-    double position_y;
-    double vitesse;
-    double acceleration;
+struct Particule {
+
+    double position_x = 0.0;
+    double position_y = 0.0;
+    double vitesse = 0.0;
+    double acceleration = -9.81;
+
 };
 
 #endif
