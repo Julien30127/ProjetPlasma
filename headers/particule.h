@@ -5,12 +5,10 @@
 #include <vector>
 
 struct Particule {
-
-    double position_x = 0.0;
-    double position_y = 0.0;
-    double vitesse = 0.0;
-    double acceleration = -9.81;
-
+    double x, y, z;       
+    double vx, vy, vz;    
+    double charge;        
+    double masse;
 };
 
 #endif

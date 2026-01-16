@@ -3,6 +3,6 @@
 
 #include "particule.h"
 
-double deplacement(std::vector<Particule> &liste, double dt);
+double force(std::vector<Particule> &liste, double dt);
 
 #endif
