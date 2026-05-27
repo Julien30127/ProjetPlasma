@@ -1,7 +1,7 @@
 #include <fstream>
 #include <vector>
 
-#include "force.h"
+#include "Boris.h"
 
 double force(std::vector<Particule> &liste, double dt) {
     std::ofstream fichier("Positions.csv");
@@ -24,30 +24,14 @@ double force(std::vector<Particule> &liste, double dt) {
         }
 
         for (auto &p : liste) {
-            double qm = p.charge / p.masse;
-            
-            // Accélération de Lorentz (avec Bx = By = 0, Bz = cst)
-            double ax = qm * (p.vy * Bz);
-            double ay = qm * (-p.vx * Bz);
+            Boris(p, dt, 0.0, 0.0, 0.0, 0.0, 0.0, Bz);
 
-            p.vx += ax * dt;
-            p.vy += ay * dt;
+            // Maj de la position (schéma Saute-Mouton)
             p.x += p.vx * dt;
             p.y += p.vy * dt;
             p.z += p.vz * dt;
         }
         temps_total += dt;
-
-        /*
-        Note : Utilisation d'Euler semi-implicite, on fait l'hypothèse d'une accélération constante (pas la
-        valeur absolue, mais plutôt la distribution sur les composantes en x et y) pendant dt.
-        
-        Conséquence : trajectoire rectiligne pendant dt, "fuite" de la particule.
-
-        Pour la retarder, on peut imposer un dt très petit.
-
-        L'éviter ? Voir "Algorithme de Boris".
-        */
     }
     fichier.close();
     return temps_total;

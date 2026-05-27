@@ -1,9 +1,17 @@
 #include <vector>
 #include <random>
+#include <fstream>
 
-#include "force.h"
+#include "Boris.h"
+
+void metadonnees() {
+    std::ofstream fichier_info("metadonnees.txt");
+    fichier_info << NOMBRE_PROTONS << "\n";
+    fichier_info.close();
+}
 
 int main() {
+    metadonnees();
     std::vector<Particule> liste;
     
     double q_proton = 1.6e-19;
@@ -14,7 +22,7 @@ int main() {
     std::uniform_real_distribution<double> pos(-0.01, 0.01);
     std::uniform_real_distribution<double> vit(1e4, 5e4); // 10 à 50 km/s
 
-    for (int i = 0; i < 6; ++i) {
+    for (int i = 0; i < NOMBRE_PROTONS; ++i) {
         Particule p;
         p.x = pos(gen); p.y = pos(gen); p.z = 0;
         p.vx = vit(gen); p.vy = vit(gen); p.vz = vit(gen) / 10.0;
