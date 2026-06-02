@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/mhd_sph.dir/src/grid.cpp.o CMakeFiles/mhd_sph.dir/src/kernel.cpp.o CMakeFiles/mhd_sph.dir/src/main.cpp.o CMakeFiles/mhd_sph.dir/src/physics.cpp.o -o mhd_sph
