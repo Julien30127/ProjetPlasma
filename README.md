@@ -23,6 +23,16 @@ This version of the project is couples the **Smoothed Particle Hydrodynamics** n
 
 This section is empty for now.
 
+## Roadmap
+
+Replace the basic explicit Euler scheme with a Leapfrog or Runge-Kutta (RK4) scheme for superior long-term energy conservation.
+
+Implement a cleaning method (e.g., gauge potential or hyperbolic cleaning) to strictly enforce the div(B) = 0 constraint, which is vital for long-term MHD stability.
+
+Utilize OpenMP (Target Offloading) or Kokkos to offload the heavy force calculation loops to a graphics card.
+
+Replace the .csv export with a scientific binary format (like VTK).
+
 ## Lauching the code
 
 ```bash
